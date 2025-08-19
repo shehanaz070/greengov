@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - GreenGov</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+      color: #333;
+    }
+
+    h2 {
+      color: #2e7d32; /* Dark Green */
+      margin-bottom: 15px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    /* Container for each section */
+    .about-section {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 15px;
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 900px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Two-column layout for Mission & Vision */
+    .two-column {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .column {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    /* Stats Section */
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .stat-card {
+      background: #e8f5e9;
+      border-radius: 10px;
+      padding: 20px;
+      flex: 1;
+      min-width: 120px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-card h3 {
+      font-size: 28px;
+      color: #1b5e20;
+      margin: 0;
+    }
+
+    .stat-card p {
+      margin: 5px 0 0 0;
+      font-weight: bold;
+    }
+
+    /* Team Section */
+    .team {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .team-member {
+      background: #f1f8e9;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      flex: 1;
+      min-width: 180px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    .team-member img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+
+    .team-member h4 {
+      margin: 10px 0 5px 0;
+      color: #2e7d32;
+    }
+
+    /* Call-to-Action Button */
+    .cta-btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #43a047;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+
+    .cta-btn:hover {
+      background: #2e7d32;
+    }
+
+    /* Responsive */
+    @media(max-width: 768px){
+      .two-column {
+        flex-direction: column;
+      }
+      .stats {
+        flex-direction: column;
+      }
+      .team {
+        flex-direction: column;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Mission & Vision -->
+  <section class="about-section">
+    <div class="two-column">
+      <div class="column">
+        <h2>Our Mission 🌱</h2>
+        <p>To empower individuals and communities to take eco-friendly actions, track their carbon savings, and turn them into tangible rewards.</p>
+      </div>
+      <div class="column">
+        <h2>Our Vision 🌍</h2>
+        <p>A world where sustainable actions are recognized, rewarded, and scaled through collective participation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How GreenGov Works -->
+  <section class="about-section">
+    <h2>How GreenGov Works ⚡</h2>
+    <p>Take Action → Upload Proof → Earn Green Points → Redeem Rewards. Each eco-action has a carbon-saving value, and companies purchase these credits to support your efforts.</p>
+  </section>
+
+  <!-- Impact Metrics -->
+  <section class="about-section">
+    <h2>Our Impact 📊</h2>
+    <div class="stats">
+      <div class="stat-card">
+        <h3>1,250+</h3>
+        <p>Trees Planted</p>
+      </div>
+      <div class="stat-card">
+        <h3>3,450+</h3>
+        <p>Kilometers Cycled</p>
+      </div>
+      <div class="stat-card">
+        <h3>2,100+ kg</h3>
+        <p>Waste Recycled</p>
+      </div>
+      <div class="stat-card">
+        <h3>5,600 kg</h3>
+        <p>Carbon Saved</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="about-section">
+    <h2>Meet the Team 👩‍💻</h2>
+    <div class="team">
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Shehnaaz Shaik">
+        <h4>Shehnaaz Shaik</h4>
+        <p>Founder & Tech Lead 🌸</p>
+      </div>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Team Member">
+        <h4>John Doe</h4>
+        <p>Co-Founder & Operations</p>
+      </div>
+      <!-- Add more members as needed -->
+    </div>
+  </section>
+
+  <!-- Call-to-Action -->
+  <section class="about-section" style="text-align:center;">
+    <h2>Join the Green Movement Today! 🌱</h2>
+    <a href="dashboard.html" class="cta-btn">Register & Start Earning Points</a>
+  </section>
+
+</body>
+</html>
