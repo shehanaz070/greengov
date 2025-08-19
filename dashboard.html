@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenGov - Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #222;
+    }
+
+    /* Top black strip */
+    .top-strip {
+      background: black;
+      color: white;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 20px;
+      align-items: center;
+    }
+    .top-strip .social-icons span {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    /* Navigation */
+    .navbar {
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .navbar .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: green;
+    }
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .navbar ul li {
+      margin-left: 25px;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+    .navbar ul li a.active {
+      color: green;
+    }
+
+    /* Registration Form */
+    .form-container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .form-container h2 {
+      margin-bottom: 20px;
+      color: green;
+    }
+    .form-container input,
+    .form-container select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    .form-container button {
+      padding: 12px 20px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 6px;
+      background: green;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .form-container button:hover {
+      background: darkgreen;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top black strip -->
+  <div class="top-strip">
+    <div>📞 +91 9876543210 | ✉️ greengov@gmail.com</div>
+    <div class="social-icons">
+      <span>📘</span>
+      <span>📸</span>
+      <span>🐦</span>
+      <span>▶️</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="navbar">
+    <div class="logo">GreenGov</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      <li><a href="rewards.html">Rewards</a></li>
+      <li><a href="upload.html">Upload Proof</a></li>
+      <li><a href="connect.html">Connect</a></li>
+    </ul>
+  </div>
+
+  <!-- Registration Form Section -->
+  <div class="form-container">
+    <h2>📝 Register to Start Your Green Journey</h2>
+    <form id="registerForm">
+      <input type="text" placeholder="First Name" required>
+      <input type="text" placeholder="Last Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="tel" placeholder="Mobile Number" required>
+      <input type="password" placeholder="Password" required>
+      
+      <input type="text" id="location" placeholder="Location (City / Coordinates)" required>
+      <button type="button" onclick="getLocation()">📍 Use My Current Location</button>
+
+      <select required>
+        <option value="">Select Role</option>
+        <option value="volunteer">Volunteer / NGO</option>
+        <option value="corporate">Corporate</option>
+        <option value="community">Community Member</option>
+      </select>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script>
+    // Geolocation function
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+
+    function showPosition(position) {
+      document.getElementById("location").value =
+        position.coords.latitude + ", " + position.coords.longitude;
+    }
+
+    function showError(error) {
+      switch(error.code) {
+        case error.PERMISSION_DENIED:
+          alert("User denied the request for Geolocation.");
+          break;
+        case error.POSITION_UNAVAILABLE:
+          alert("Location information is unavailable.");
+          break;
+        case error.TIMEOUT:
+          alert("The request to get user location timed out.");
+          break;
+        case error.UNKNOWN_ERROR:
+          alert("An unknown error occurred.");
+          break;
+      }
+    }
+  </script>
+
+</body>
+</html>
