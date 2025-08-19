@@ -79,7 +79,38 @@
       margin: 5px 0 0 0;
       font-weight: bold;
     }
-
+     
+    /* Navigation */
+    .navbar {
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .navbar .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: green;
+    }
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .navbar ul li {
+      margin-left: 25px;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+    .navbar ul li a.active {
+      color: green;
+    }
     /* Team Section */
     .team {
       display: flex;
