@@ -14,109 +14,7 @@
       color: #333;
     }
 
-    h2 {
-      color: #2e7d32;
-      margin-bottom: 15px;
-      text-align: center;
-    }
-
-    .rewards-section {
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 15px;
-      padding: 30px;
-      margin: 30px auto;
-      max-width: 900px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    /* Points Counter */
-    .points-counter {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .points-counter h3 {
-      font-size: 32px;
-      color: #1b5e20;
-      margin-bottom: 10px;
-    }
-
-     /* Progress Bar */
-    .progress-container {
-      background: #c8e6c9;
-      border-radius: 20px;
-      overflow: hidden;
-      height: 25px;
-      width: 80%;
-      margin: 0 auto 20px auto;
-      box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .progress-bar {
-      height: 100%;
-      width: 60%; /* Example progress */
-      background: #43a047;
-      text-align: center;
-      color: white;
-      line-height: 25px;
-      font-weight: bold;
-      border-radius: 20px;
-      transition: width 0.5s;
-    }
-
-    /* Rewards Cards */
-    .reward-cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .reward-card {
-      background: #e8f5e9;
-      border-radius: 15px;
-      padding: 20px;
-      width: 200px;
-      text-align: center;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-
-    .reward-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .reward-card h3 {
-      color: #2e7d32;
-      margin-bottom: 10px;
-    }
-
-    .reward-card p {
-      margin-bottom: 15px;
-      font-weight: bold;
-    }
-
-    .reward-card button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 10px;
-      background: #43a047;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .reward-card button:hover {
-      background: #2e7d32;
-    }
-
-    @media(max-width: 768px){
-      .reward-cards {
-        flex-direction: column;
-        align-items: center;
-      }
-     /* Navigation */
+    /* Navigation */
     .navbar {
       background: white;
       display: flex;
@@ -124,6 +22,9 @@
       align-items: center;
       padding: 15px 40px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     .navbar .logo {
       font-size: 22px;
@@ -146,15 +47,126 @@
     }
     .navbar ul li a.active {
       color: green;
-    }  
+    }
+
+    /* Responsive Navbar */
+    @media(max-width: 768px){
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+      }
+      .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+      }
+      .navbar ul li {
+        margin-left: 0;
+      }
+    }
+
+    h2 {
+      color: #2e7d32;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .rewards-section {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 15px;
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 900px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Points Counter */
+    .points-counter {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .points-counter h3 {
+      font-size: 32px;
+      color: #1b5e20;
+      margin-bottom: 10px;
+    }
+
+    /* Progress Bar */
+    .progress-container {
+      background: #c8e6c9;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 25px;
+      width: 80%;
+      margin: 0 auto 20px auto;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .progress-bar {
+      height: 100%;
+      width: 60%; /* Example progress */
+      background: #43a047;
+      text-align: center;
+      color: white;
+      line-height: 25px;
+      font-weight: bold;
+      border-radius: 20px;
+      transition: width 0.5s;
+    }
+
+    /* Rewards Cards */
+    .reward-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .reward-card {
+      background: #e8f5e9;
+      border-radius: 15px;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .reward-card:hover {
+      transform: translateY(-5px);
+    }
+    .reward-card h3 {
+      color: #2e7d32;
+      margin-bottom: 10px;
+    }
+    .reward-card p {
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    .reward-card button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #43a047;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .reward-card button:hover {
+      background: #2e7d32;
+    }
+
+    @media(max-width: 768px){
+      .reward-cards {
+        flex-direction: column;
+        align-items: center;
+      }
     }
 
   </style>
 </head>
 <body>
-  <section class="rewards-section">
-    <h2>Your Green Points 🌱</h2>
- <!-- Navigation -->
+
+  <!-- Navigation -->
   <div class="navbar">
     <div class="logo">GreenGov</div>
     <ul>
@@ -166,6 +178,10 @@
       <li><a href="connect.html">Calculate</a></li>
     </ul>
   </div>
+
+  <section class="rewards-section">
+    <h2>Your Green Points 🌱</h2>
+
     <!-- Points Counter -->
     <div class="points-counter">
       <h3>1,250 Points</h3>
