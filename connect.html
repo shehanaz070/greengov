@@ -66,13 +66,55 @@
       font-weight: bold;
       color: #d32f2f;
     }
+    /* Navigation */
+    .navbar {
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .navbar .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: green;
+    }
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .navbar ul li {
+      margin-left: 25px;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+    .navbar ul li a.active {
+      color: green;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>🌱 Green Points Calculator</h1>
   </header>
-
+  <!-- Navigation -->
+  <div class="navbar">
+    <div class="logo">GreenGov</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      <li><a href="rewards.html">Rewards</a></li>
+      <li><a href="upload.html">Upload Proof</a></li>
+      <li><a href="connect.html">Calculate</a></li>
+    </ul>
+  </div>
   <div class="container">
     <h2>Select Your Eco-friendly Activities</h2>
     <div class="activities">
