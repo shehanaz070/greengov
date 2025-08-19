@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Green Points Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #e8f5e9;
+      margin: 0;
+      padding: 0;
+      color: #2e7d32;
+    }
+    header {
+      background: #43a047;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #1b5e20;
+      margin-bottom: 10px;
+    }
+    .activities {
+      margin: 20px 0;
+    }
+    label {
+      display: block;
+      margin: 8px 0;
+      font-size: 16px;
+    }
+    button {
+      background: #43a047;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #2e7d32;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      background: #f1f8e9;
+      font-size: 18px;
+    }
+    .about {
+      margin-top: 30px;
+      padding: 20px;
+      background: #c8e6c9;
+      border-radius: 12px;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌱 Green Points Calculator</h1>
+  </header>
+
+  <div class="container">
+    <h2>Select Your Eco-friendly Activities</h2>
+    <div class="activities">
+      <label><input type="checkbox" value="200"> 🌳 Plant a Tree (+200 points)</label>
+      <label><input type="checkbox" value="100"> ♻️ Recycle Waste (+100 points)</label>
+      <label><input type="checkbox" value="150"> 🚍 Use Public Transport (+150 points)</label>
+      <label><input type="checkbox" value="180"> 🚲 Use Bicycle (+180 points)</label>
+      <label><input type="checkbox" value="250"> ☀️ Use Renewable Energy (+250 points)</label>
+      <label><input type="checkbox" value="120"> 💧 Water Conservation (+120 points)</label>
+      <label><input type="checkbox" value="170"> 🧹 Community Cleanup (+170 points)</label>
+      <label><input type="checkbox" value="-200"> ❌ Fake/Double Proof (-200 points)</label>
+    </div>
+    <button onclick="calculatePoints()">Calculate My Points</button>
+
+    <div class="result" id="result"></div>
+
+    <div class="about">
+      <h2>📌 About Green Points System</h2>
+      <p>
+        Every eco-friendly action you take earns <span class="highlight">Green Points</span>.  
+        These points can be converted into rewards:
+      </p>
+      <ul>
+        <li><span class="highlight">1000 Points = ₹100 Bill Reduction</span></li>
+        <li><span class="highlight">2000 Points = 5% Tax Rebate</span></li>
+        <li><span class="highlight">5000 Points = ₹500 Shopping Voucher</span></li>
+      </ul>
+      <p>
+        The more points you collect, the more you save 💰 and help the planet 🌍.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function calculatePoints() {
+      let checkboxes = document.querySelectorAll('.activities input[type="checkbox"]');
+      let total = 0;
+      checkboxes.forEach(box => {
+        if (box.checked) {
+          total += parseInt(box.value);
+        }
+      });
+
+      // Rewards logic
+      let rewardMessage = "";
+      if (total >= 5000) {
+        rewardMessage = "🎁 You earn a ₹500 Shopping Voucher!";
+      } else if (total >= 2000) {
+        rewardMessage = "💸 You qualify for a 5% Tax Rebate!";
+      } else if (total >= 1000) {
+        rewardMessage = "✅ You get ₹100 Bill Reduction!";
+      } else {
+        rewardMessage = "Keep going! Collect more points to unlock rewards.";
+      }
+
+      document.getElementById("result").innerHTML =
+        `⭐ Total Green Points: <b>${total}</b><br>${rewardMessage}`;
+    }
+  </script>
+</body>
+</html>
