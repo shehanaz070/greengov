@@ -111,35 +111,42 @@
     .navbar ul li a.active {
       color: green;
     }
-    /* Team Section */
-    .team {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
+     .team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
 
-    .team-member {
-      background: #f1f8e9;
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      flex: 1;
-      min-width: 180px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-    }
+.team-member {
+  background: #f1f8e9; /* colored text box */
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-    .team-member img {
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-    }
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
 
-    .team-member h4 {
-      margin: 10px 0 5px 0;
-      color: #2e7d32;
-    }
+.team-member .emoji {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.team-member h4 {
+  margin: 10px 0 5px 0;
+  color: #2e7d32;
+}
+
+.team-member p {
+  color: #555;
+}
 
     /* Call-to-Action Button */
     .cta-btn {
@@ -230,19 +237,21 @@
   </section>
 
   <!-- Team Section -->
-  <section class="about-section">
-    <h2>Meet the Team 👩‍💻</h2>
-    <div class="team">
-      <div class="team-member">
-        <img src="https://via.placeholder.com/100" alt="Team lead">
-        <h4>Shehanaz Shaik</h4>
-        <p>Founder & Tech Lead 🌸</p>
-      </div>
-      <div class="team-members">
-        <img src="https://via.placeholder.com/100" alt="Team Members">
-        <h4>Ahla tejaswi , Neeha kousar</h4>
-        <p>Co-Founder & Operations</p>
-      </div>
+<section class="about-section">
+  <h2>Meet the Team 👩‍💻</h2>
+  <div class="team">
+    <div class="team-member">
+      <div class="emoji">🌸</div>
+      <h4>Shehanaz Shaik</h4>
+      <p>Founder & Tech Lead</p>
+    </div>
+    <div class="team-member">
+      <div class="emoji">🤝</div>
+      <h4>Ahla Tejaswi & Neeha Kousar</h4>
+      <p>Co-Founder & Operations</p>
+    </div>
+  </div>
+</section>
       <!-- Add more members as needed -->
     </div>
   </section>
